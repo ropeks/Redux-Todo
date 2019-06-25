@@ -4,7 +4,10 @@ import {
     CLEAR_TODO
 } from '../actions/actions';
 
-const initialState = [{id: 1, value: "add some tasks", completed: false}]
+const initialState = [
+    {id: 1, value: "click on tasks you completed", completed: false},
+    {id: 2, value: "press 'clear' to clear completed tasks", completed: false}
+]
 
 export function todoReducer(sliceOfState = initialState, action) {
     switch (action.type) {

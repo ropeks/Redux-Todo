@@ -22,7 +22,7 @@ class TodoForm extends React.Component {
         return (
             <div className="form-container">
                 <form onSubmit={this.onAddTodo}>
-                    <input placeholder="Add new task"></input>
+                    <input name="task" placeholder="Add new task"></input>
                     <button>Add</button>
                     <button type="button" onClick={this.onClearTodo}>Clear</button>
                 </form>

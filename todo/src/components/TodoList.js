@@ -10,9 +10,8 @@ class TodoList extends React.Component {
                 <div>
                     {
                         this.props.todos.map(todo => (
-                            <div className="task">
+                            <div key={todo.id} className="task">
                                 <div 
-                                    key={todo.id} 
                                     onClick={() => this.props.clickTodo(todo.id)}
                                     className={todo.completed ? "selected" : undefined}
                                 >

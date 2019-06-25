@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions/actions';
+import { addTodo, clearTodo } from '../actions/actions';
 
 class TodoForm extends React.Component {
     onAddTodo = (e) => {
@@ -11,6 +11,11 @@ class TodoForm extends React.Component {
         this.props.addTodo(input.value);
         input.value = '';
     }
+
+    onClearTodo = (e) => {
+        e.preventDefault();
+        this.props.clearTodo();
+    }
     
     render() {
         return (
@@ -18,6 +23,7 @@ class TodoForm extends React.Component {
                 <form onSubmit={this.onAddTodo}>
                     <input name="task" placeholder="Add new task"></input>
                     <button>Add</button>
+                    <button type="button" onClick={this.onClearTodo}>Clear</button>
                 </form>
             </div>
         )
@@ -26,5 +32,5 @@ class TodoForm extends React.Component {
 
 export default connect(
     null,
-    { addTodo }
+    { addTodo, clearTodo }
 )(TodoForm);

@@ -6,18 +6,24 @@ import '../App.css';
 class TodoList extends React.Component {
     render() {
         return (
-            <div>
-                {
-                    this.props.todos.map(todo => (
-                        <div 
-                            key={todo.id} 
-                            onClick={() => this.props.clickTodo(todo.id)}
-                            className={todo.completed ? "selected" : undefined}
-                        >
-                            {todo.value}
-                        </div>
-                    ))
-                }
+            <div className="list-container">
+                <div>
+                    {
+                        this.props.todos.map(todo => (
+                            <div className="task">
+                                <div 
+                                    key={todo.id} 
+                                    onClick={() => this.props.clickTodo(todo.id)}
+                                    className={todo.completed ? "selected" : undefined}
+                                >
+                                    {todo.value}
+                                </div>
+                            </div>
+                        
+                        ))
+                    }
+                </div>
+                
             </div>
         )
     }

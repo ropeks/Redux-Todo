@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo, clearTodo } from '../actions/actions';
+import '../App.css';
 
 class TodoForm extends React.Component {
     onAddTodo = (e) => {
@@ -19,9 +20,9 @@ class TodoForm extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="form-container">
                 <form onSubmit={this.onAddTodo}>
-                    <input name="task" placeholder="Add new task"></input>
+                    <input placeholder="Add new task"></input>
                     <button>Add</button>
                     <button type="button" onClick={this.onClearTodo}>Clear</button>
                 </form>
